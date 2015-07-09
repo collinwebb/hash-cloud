@@ -15,12 +15,12 @@
 
 
   #tweeters
-    .media(ng-repeat="(_, userData) in data.people")
+    .media(ng-repeat="(screenName, userData) in data.people")
       .media-left
         a(target="_blank", href="http://twitter.com/{{userData.screen_name}}")
           img.media-object(ng-src="{{userData.profile_image_url}}")
       .media-body
-        button.btn.btn-info.btn-xs.pull-right(ng-click="follow()" ng-hide="userData.following") Follow
+        button.btn.btn-info.btn-xs.pull-right(ng-click="follow(screenName)" ng-hide="userData.following") Follow
         button.btn.btn-success.btn-xs.pull-right.disable(disabled=true, ng-show="userData.following") Following
         h4.media-heading {{userData.name}} {{console.log(userData)}}
         .counts
