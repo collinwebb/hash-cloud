@@ -6,7 +6,10 @@ nav.navbar.navbar-default(ng-controller='NavCtrl')
         span.icon-bar
         span.icon-bar
         span.icon-bar
-      a.navbar-brand(ui-sref='home') #Cloud
+      a.navbar-brand(ui-sref='home') #Cloud {{currentUser.displayName}}
     #navbar.collapse.navbar-collapse
       ul.nav.navbar-nav.navbar-right
         li: a(ui-sref='home'): i.glyphicon.glyphicon-home &nbsp;Home
+        li
+          a(ng-click='login()' ng-hide="currentUser"): i.glyphicon.glyphicon-home &nbsp;Login
+          a(ng-click='logout()' ng-show="currentUser"): i.glyphicon.glyphicon-home &nbsp;Logout

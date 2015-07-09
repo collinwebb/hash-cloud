@@ -1,7 +1,6 @@
 'use strict';
 
 angular.module('sif')
-.run(function(FBService){
-  FBService.init();
+.run(function(){
   console.log('Sif Online');
 });

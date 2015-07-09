@@ -1,19 +1,17 @@
-h1.text-center #Cloud
+.tags-controller(ng-controller="mainCtrl")
 
-form
-  .input-group
-    input.form-control(placeholder="List of #words")
-    .input-group-btn
-      button.btn.btn-default(type="submit") Go
+  h1.text-center #Cloud
 
-.well
-  #tags.clearfix
-    .tag(style="font-size: 40px") #Angularjs
-    .tag(style="font-size: 20px") #Emberjs
-    .tag(style="font-size: 80px") #JavaScript
-    .tag(style="font-size: 10px") #Reactjs
-    .tag(style="font-size: 10px") #Backbone
-    .tag(style="font-size: 20px") #MeanStack
-    .tag(style="font-size: 25px") #Nodejs
-    .tag(style="font-size: 15px") #Mongodb
-    .tag(style="font-size: 5px") #Expressjs
+  form(ng-submit="search()")
+    .input-group
+      input.form-control(placeholder="List of #words", ng-model="words")
+      .input-group-btn
+        button.btn.btn-default(type="submit") Go
+
+  .well
+    #tags.clearfix
+      .tag(ng-repeat="(tag, size) in data.stats" style="font-size: {{size}}px")
+        span(ng-click="includeInTweet(tag)") {{tag}}
+
+  textarea.form-control(placeholder="Tweet here", ng-model="tweet")
+  button.btn.btn-primary(ng-click="sendTweet()") Tweet
