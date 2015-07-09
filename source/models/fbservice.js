@@ -7,9 +7,9 @@ angular.module('sif')
   this.db = new Firebase(urls.firebaseUrl);
 
   this.db.onAuth(function(authData) {
-    console.log(authData);
     if (authData) {
       fb.currentUser = authData.twitter;
+      console.log("Logged in: ", authData);
     }
   });
 
@@ -18,7 +18,7 @@ angular.module('sif')
   };
 
   this.twitterLogin = function() {
-    this.db.authWithOAuthRedirect("twitter", function(error) {
+    fb.db.authWithOAuthRedirect("twitter", function(error) {
       if (error) {
         console.log("Login Failed!", error);
       }

@@ -1,7 +1,7 @@
 {
-  "name": "sif",
+  "name": "hash-cloud",
   "version": "1.0.0",
-  "description": "A more robust Angular template",
+  "description": "an awesome twitter search",
   "main": "gulpfile.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
@@ -9,17 +9,17 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/IAmEddieDean/Sif"
+    "url": "https://github.com/moltenglacier/hash-cloud"
   },
   "keywords": [
     "Angular",
     "SASS",
     "Gulp"
   ],
-  "author": "Christopher Oyler",
-  "license": "ISC",
+  "author": "Collin Webb",
+  "license": "derp",
   "bugs": {
-    "url": "https://github.com/IAmEddieDean/Sif/issues"
+    "url": ""
   },
   "homepage": "https://github.com/IAmEddieDean/Sif",
   "devDependencies": {

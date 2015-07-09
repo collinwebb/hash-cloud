@@ -4,3 +4,15 @@
     font-weight: bold;
   }
 }
+
+.media {
+  border: 1px solid #D7D7D7;
+  padding: 0.75em;
+  border-radius: 10px;
+  .counts {
+    margin: 5px auto;
+    span {
+      margin-right: 7px;
+    }
+  }
+}
