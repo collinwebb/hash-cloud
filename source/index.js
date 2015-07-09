@@ -10,6 +10,7 @@ app.controller("mainCtrl", function($scope, twitterUser) {
     twitterUser.search($scope.words)
     .success(function(data) {
       $scope.data = data;
+      console.log(data);
     })
     .catch(function(error) {
       console.log(error);

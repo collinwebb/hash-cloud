@@ -15,14 +15,17 @@
 
 
   #tweeters
-    .media(ng-repeat="(screenName, userData) in data.people")
+    .checkbox(ng-show="data.people"): label
+      input(type="checkbox", ng-model="showFriends")
+      | Show Friends {{showFriends}}
+    .media(ng-repeat="(screenName, userData) in data.people | friendsFilter: showFriends")
       .media-left
         a(target="_blank", href="http://twitter.com/{{userData.screen_name}}")
           img.media-object(ng-src="{{userData.profile_image_url}}")
       .media-body
         button.btn.btn-info.btn-xs.pull-right(ng-click="follow(screenName)" ng-hide="userData.following") Follow
         button.btn.btn-success.btn-xs.pull-right.disable(disabled=true, ng-show="userData.following") Following
-        h4.media-heading {{userData.name}} {{console.log(userData)}}
+        h4.media-heading {{userData.name}}
         .counts
            span.username
              strong @{{userData.screen_name}}
